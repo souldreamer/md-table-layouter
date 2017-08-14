@@ -1,0 +1,280 @@
+<div class="mat-elevation-z8">
+	<md-table #table [dataSource]="dataSource">
+		<ng-container cdkColumnDef="0">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[0]?.style" [class.ellipsis]="columns[0]?.ellipsis"
+			>{{columns[0]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[0]?.style"
+				[class.ellipsis]="columns[0]?.ellipsis"
+			>{{row[0]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="1">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[1]?.style" [class.ellipsis]="columns[1]?.ellipsis"
+			>{{columns[1]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[1]?.style"
+				[class.ellipsis]="columns[1]?.ellipsis"
+			>{{row[1]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="2">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[2]?.style" [class.ellipsis]="columns[2]?.ellipsis"
+			>{{columns[2]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[2]?.style"
+				[class.ellipsis]="columns[2]?.ellipsis"
+			>{{row[2]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="3">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[3]?.style" [class.ellipsis]="columns[3]?.ellipsis"
+			>{{columns[3]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[3]?.style"
+				[class.ellipsis]="columns[3]?.ellipsis"
+			>{{row[3]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="4">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[4]?.style" [class.ellipsis]="columns[4]?.ellipsis"
+			>{{columns[4]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[4]?.style"
+				[class.ellipsis]="columns[4]?.ellipsis"
+			>{{row[4]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="5">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[5]?.style" [class.ellipsis]="columns[5]?.ellipsis"
+			>{{columns[5]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[5]?.style"
+				[class.ellipsis]="columns[5]?.ellipsis"
+			>{{row[5]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="6">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[6]?.style" [class.ellipsis]="columns[6]?.ellipsis"
+			>{{columns[6]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[6]?.style"
+				[class.ellipsis]="columns[6]?.ellipsis"
+			>{{row[6]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="7">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[7]?.style" [class.ellipsis]="columns[7]?.ellipsis"
+			>{{columns[7]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[7]?.style"
+				[class.ellipsis]="columns[7]?.ellipsis"
+			>{{row[7]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="8">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[8]?.style" [class.ellipsis]="columns[8]?.ellipsis"
+			>{{columns[8]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[8]?.style"
+				[class.ellipsis]="columns[8]?.ellipsis"
+			>{{row[8]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="9">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[9]?.style" [class.ellipsis]="columns[9]?.ellipsis"
+			>{{columns[9]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[9]?.style"
+				[class.ellipsis]="columns[9]?.ellipsis"
+			>{{row[9]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="10">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[10]?.style" [class.ellipsis]="columns[10]?.ellipsis"
+			>{{columns[10]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[10]?.style"
+				[class.ellipsis]="columns[10]?.ellipsis"
+			>{{row[10]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="11">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[11]?.style" [class.ellipsis]="columns[11]?.ellipsis"
+			>{{columns[11]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[11]?.style"
+				[class.ellipsis]="columns[11]?.ellipsis"
+			>{{row[11]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="12">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[12]?.style" [class.ellipsis]="columns[12]?.ellipsis"
+			>{{columns[12]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[12]?.style"
+				[class.ellipsis]="columns[12]?.ellipsis"
+			>{{row[12]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="13">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[13]?.style" [class.ellipsis]="columns[13]?.ellipsis"
+			>{{columns[13]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[13]?.style"
+				[class.ellipsis]="columns[13]?.ellipsis"
+			>{{row[13]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="14">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[14]?.style" [class.ellipsis]="columns[14]?.ellipsis"
+			>{{columns[14]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[14]?.style"
+				[class.ellipsis]="columns[14]?.ellipsis"
+			>{{row[14]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="15">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[15]?.style" [class.ellipsis]="columns[15]?.ellipsis"
+			>{{columns[15]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[15]?.style"
+				[class.ellipsis]="columns[15]?.ellipsis"
+			>{{row[15]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="16">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[16]?.style" [class.ellipsis]="columns[16]?.ellipsis"
+			>{{columns[16]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[16]?.style"
+				[class.ellipsis]="columns[16]?.ellipsis"
+			>{{row[16]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="17">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[17]?.style" [class.ellipsis]="columns[17]?.ellipsis"
+			>{{columns[17]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[17]?.style"
+				[class.ellipsis]="columns[17]?.ellipsis"
+			>{{row[17]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="18">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[18]?.style" [class.ellipsis]="columns[18]?.ellipsis"
+			>{{columns[18]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[18]?.style"
+				[class.ellipsis]="columns[18]?.ellipsis"
+			>{{row[18]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="19">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[19]?.style" [class.ellipsis]="columns[19]?.ellipsis"
+			>{{columns[19]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[19]?.style"
+				[class.ellipsis]="columns[19]?.ellipsis"
+			>{{row[19]}}
+			</md-cell>
+		</ng-container>
+		<ng-container cdkColumnDef="20">
+			<md-header-cell
+				*cdkHeaderCellDef
+				[style]="columns[20]?.style" [class.ellipsis]="columns[20]?.ellipsis"
+			>{{columns[20]?.label}}
+			</md-header-cell>
+			<md-cell
+				*cdkCellDef="let row"
+				[style]="columns[20]?.style"
+				[class.ellipsis]="columns[20]?.ellipsis"
+			>{{row[20]}}
+			</md-cell>
+		</ng-container>
+
+		<md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+		<md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+	</md-table>
+</div>

@@ -1,0 +1,22 @@
+:host {
+	overflow: auto;
+	display: block;
+	height: 100vh;
+	width: 100vw;
+}
+
+button[md-icon-button] {
+	margin: 1rem;
+}
+
+md-toolbar {
+	margin-bottom: 2rem;
+}
+
+.table-container {
+	max-width: 100%;
+	overflow-x: auto;
+	box-sizing: border-box;
+	padding: 1rem;
+}
+

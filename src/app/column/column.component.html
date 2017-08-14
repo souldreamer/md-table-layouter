@@ -1,0 +1,59 @@
+<!--
+	grow: number;
+	shrink: number;
+	basis: string;
+	minWidth: string;
+-->
+<md-card>
+	<h1 style="text-align: center">Column {{getColumnId(column)}}</h1>
+	<md-card-content>
+		<form fxLayout="row wrap" fxLayoutAlign="start center">
+			<md-input-container fxFlex="100%">
+				<input
+					mdInput
+					name="label" placeholder="Label"
+					[ngModel]="column.label" (ngModelChange)="setValue('label', $event)">
+			</md-input-container>
+			<md-input-container fxFlex="100%">
+				<textarea
+					mdInput
+					name="text" placeholder="Text"
+					rows="2"
+					[ngModel]="column.text" (ngModelChange)="setValue('text', $event)"></textarea>
+			</md-input-container>
+			<md-input-container fxFlex="33%">
+				<input
+					mdInput
+					name="grow" placeholder="Grow" type="number"
+					[ngModel]="column.grow" (ngModelChange)="setValue('grow', $event)">
+			</md-input-container>
+			<md-input-container fxFlex="33%">
+				<input
+					mdInput
+					name="shrink" placeholder="Shrink" type="number"
+					[ngModel]="column.shrink" (ngModelChange)="setValue('shrink', $event)">
+			</md-input-container>
+			<md-input-container fxFlex="33%">
+				<input
+					mdInput
+					name="basis" placeholder="Basis"
+					[ngModel]="column.basis" (ngModelChange)="setValue('basis', $event)">
+			</md-input-container>
+			<md-input-container fxFlex="100%">
+				<input
+					mdInput
+					name="minWidth" placeholder="Minimum Width"
+					[ngModel]="column.minWidth" (ngModelChange)="setValue('minWidth', $event)">
+			</md-input-container>
+			<md-checkbox
+				fxFlex="100%"
+				[checked]="column.ellipsis" (change)="setValue('ellipsis', $event.checked)"
+			>
+				Ellipsis
+			</md-checkbox>
+		</form>
+	</md-card-content>
+	<md-card-actions align="start">
+		<button md-button color="warn" (click)="delete()">DELETE</button>
+	</md-card-actions>
+</md-card>
