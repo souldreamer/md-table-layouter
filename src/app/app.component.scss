@@ -20,3 +20,6 @@ md-toolbar {
 	padding: 1rem;
 }
 
+md-toolbar ::ng-deep .mat-toolbar-layout {
+	width: 100%;
+}

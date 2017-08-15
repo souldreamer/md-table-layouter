@@ -3,6 +3,8 @@ import { Column } from './table/table.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdDialog } from '@angular/material';
 import { CssOutputComponent } from './css-output/css-output.component';
+import { ImportComponent } from './json/import/import.component';
+import { ExportComponent } from './json/export/export.component';
 
 @Component({
 	selector: 'mdtl-root',
@@ -19,20 +21,24 @@ export class AppComponent {
 	displayedColumns: string[] = [];
 	
 	constructor(private sanitizer: DomSanitizer, private dialog: MdDialog) {
-		try {
-			this.columns = JSON.parse(localStorage.getItem('columns')) || [];
-			this.columns.forEach(column => column.style = this.getColumnStyle(column));
-			this.displayedColumns = JSON.parse(localStorage.getItem('displayedColumns')) || [];
-		} catch (e) {
-			this.columns = [];
-			this.displayedColumns = [];
-		}
+		this.setColumns(localStorage.getItem('columns'));
 	}
 	
 	static getSize(size: string) {
 		if (/^\d+$/.test(size)) { return size + 'px'; }
 		if (/^\d+(%|rem|em|px)$/.test(size)) { return size; }
 		return '';
+	}
+	
+	setColumns(columns: string) {
+		try {
+			this.columns = JSON.parse(columns) || [];
+			this.columns.forEach(column => column.style = this.getColumnStyle(column));
+			this.displayedColumns = this.columns.map(column => column.id);
+		} catch (e) {
+			this.columns = [];
+			this.displayedColumns = [];
+		}
 	}
 	
 	getColumnStyle(col: Column) {
@@ -55,7 +61,6 @@ export class AppComponent {
 		this.displayedColumns = this.columns.map(column => column.id);
 		
 		localStorage.setItem('columns', JSON.stringify(this.columns));
-		localStorage.setItem('displayedColumns', JSON.stringify(this.displayedColumns));
 	}
 	
 	addColumn() {
@@ -76,5 +81,19 @@ export class AppComponent {
 	
 	generateCSS() {
 		this.dialog.open(CssOutputComponent, {data: {columns: this.columns}});
+	}
+	exportJSON() {
+		this.dialog.open(ExportComponent, {data: {columns: this.columns}});
+	}
+	importJSON() {
+		this.dialog
+			.open(ImportComponent)
+			.afterClosed()
+			.subscribe(json => {
+				if (json) {
+					this.setColumns(json);
+					localStorage.setItem('columns', json);
+				}
+			});
 	}
 }

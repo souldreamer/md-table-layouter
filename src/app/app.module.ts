@@ -13,13 +13,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ColumnComponent } from './column/column.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CssOutputComponent } from './css-output/css-output.component';
+import { ExportComponent } from './json/export/export.component';
+import { ImportComponent } from './json/import/import.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		TableComponent,
 		ColumnComponent,
-		CssOutputComponent
+		CssOutputComponent,
+		ExportComponent,
+		ImportComponent
 	],
 	imports: [
 		BrowserModule,
@@ -39,6 +43,10 @@ import { CssOutputComponent } from './css-output/css-output.component';
 	],
 	providers: [],
 	bootstrap: [AppComponent],
-	entryComponents: [CssOutputComponent]
+	entryComponents: [
+		CssOutputComponent,
+		ExportComponent,
+		ImportComponent
+	]
 })
 export class AppModule { }

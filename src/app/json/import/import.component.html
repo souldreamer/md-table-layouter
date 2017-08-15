@@ -1,0 +1,9 @@
+<form>
+	<textarea
+		mdInput
+		name="import" placeholder="Import JSON"
+		ngModel #import="ngModel"
+		rows="10"
+	></textarea>
+	<button md-button color="primary" [md-dialog-close]="import.value">Import</button>
+</form>

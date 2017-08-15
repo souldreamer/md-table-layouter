@@ -1,4 +1,15 @@
-<md-toolbar color="primary">MdTable Layouter</md-toolbar>
+<md-toolbar color="primary" fxLayout="row" fxLayoutAlign="stretch center">
+	<span fxFlex="0 0 auto">MdTable Layouter</span>
+	<span fxFlex="1 1 auto"> </span>
+	<span fxFlex="0 0 auto">
+		<button md-button (click)="addColumn()" [disabled]="columns.length > 20">
+			<md-icon>add</md-icon> NEW COLUMN
+		</button>
+		<button md-button (click)="generateCSS()">GENERATE CSS</button>
+		<button md-button color="accent" (click)="exportJSON()">EXPORT JSON</button>
+		<button md-button color="accent" (click)="importJSON()">IMPORT JSON</button>
+	</span>
+</md-toolbar>
 
 <div style="margin: 0 1rem;">
 	<md-select placeholder="Width" name="size" ngModel #size="ngModel">
@@ -11,13 +22,6 @@
 		style="display: block;" [style.width]="size.value"
 		[columns]="columns" [displayedColumns]="displayedColumns"
 	></mdtl-table>
-</div>
-
-<div fxLayout="row" fxLayoutAlign="start center">
-	<button md-button color="primary" (click)="addColumn()" [disabled]="columns.length > 20">
-		<md-icon>add</md-icon> NEW COLUMN
-	</button>
-	<button md-button color="primary" (click)="generateCSS()">GENERATE CSS</button>
 </div>
 
 <div fxLayout="row wrap" fxLayoutAlign="start start">
