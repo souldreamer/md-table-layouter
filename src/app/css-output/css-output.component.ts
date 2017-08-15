@@ -14,7 +14,10 @@ export class CssOutputComponent implements OnInit {
 	overflow: hidden;
 	text-overflow: ellipsis;`;
 	
-	constructor(@Inject(MD_DIALOG_DATA) private options: {columns: Column[]}, private sanitizer: DomSanitizer) {}
+	constructor(
+		@Inject(MD_DIALOG_DATA) private options: {columns: Column[]},
+		private sanitizer: DomSanitizer
+	) {}
 	
 	ngOnInit() {
 	}
@@ -23,7 +26,7 @@ export class CssOutputComponent implements OnInit {
 		return this.sanitizer.bypassSecurityTrustHtml(
 			this.options.columns.map(column => `/* ${column.label} */
 .cdk-column-columnId${+column.id + 1} {
-	${this.sanitizer.sanitize(SecurityContext.STYLE, column.style).replace('; ', ';\n\t')};${column.ellipsis ? this.ellipsisCSS : ''}
+	${this.sanitizer.sanitize(SecurityContext.STYLE, column.style).replace(/; /g, ';\n\t')};${column.ellipsis ? this.ellipsisCSS : ''}
 }
 `).join('\n')
 		);

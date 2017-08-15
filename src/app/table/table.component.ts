@@ -14,6 +14,7 @@ export interface Column {
 	shrink: number;
 	basis: string;
 	minWidth: string;
+	maxWidth: string;
 }
 
 @Component({

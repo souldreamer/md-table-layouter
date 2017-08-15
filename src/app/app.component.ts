@@ -39,7 +39,8 @@ export class AppComponent {
 		const basis = /^\d+(%|rem|em|px)?$/.test(col.basis) ? AppComponent.getSize(col.basis) : 'auto';
 		const flex = `flex: ${col.grow || 0} ${col.shrink || 0} ${basis}`;
 		const minWidth = /^\d+(%|rem|em|px)?$/.test(col.minWidth) ? `; min-width: ${AppComponent.getSize(col.minWidth)}` : '';
-		return this.sanitizer.bypassSecurityTrustStyle(flex + minWidth);
+		const maxWidth = /^\d+(%|rem|em|px)?$/.test(col.minWidth) ? `; max-width: ${AppComponent.getSize(col.maxWidth)}` : '';
+		return this.sanitizer.bypassSecurityTrustStyle(flex + minWidth + maxWidth);
 	}
 	
 	setColumn(oldColumn: Column, newColumn: Column|null) {
@@ -67,7 +68,8 @@ export class AppComponent {
 			ellipsis: false,
 			shrink: 1,
 			grow: 1,
-			minWidth: ''
+			minWidth: '',
+			maxWidth: ''
 		}];
 		this.setColumn(null, null);
 	}

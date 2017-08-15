@@ -1,9 +1,3 @@
-<!--
-	grow: number;
-	shrink: number;
-	basis: string;
-	minWidth: string;
--->
 <md-card>
 	<h1 style="text-align: center">Column {{getColumnId(column)}}</h1>
 	<md-card-content>
@@ -39,11 +33,17 @@
 					name="basis" placeholder="Basis"
 					[ngModel]="column.basis" (ngModelChange)="setValue('basis', $event)">
 			</md-input-container>
-			<md-input-container fxFlex="100%">
+			<md-input-container fxFlex="50%">
 				<input
 					mdInput
-					name="minWidth" placeholder="Minimum Width"
+					name="minWidth" placeholder="min-width"
 					[ngModel]="column.minWidth" (ngModelChange)="setValue('minWidth', $event)">
+			</md-input-container>
+			<md-input-container fxFlex="50%">
+				<input
+					mdInput
+					name="maxWidth" placeholder="max-width"
+					[ngModel]="column.maxWidth" (ngModelChange)="setValue('maxWidth', $event)">
 			</md-input-container>
 			<md-checkbox
 				fxFlex="100%"
