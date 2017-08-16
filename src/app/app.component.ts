@@ -25,8 +25,8 @@ export class AppComponent {
 	}
 	
 	static getSize(size: string) {
-		if (/^\d+$/.test(size)) { return size + 'px'; }
-		if (/^\d+(%|rem|em|px)$/.test(size)) { return size; }
+		if (/^(\d*\.\d+|\d+)$/.test(size)) { return size + 'px'; }
+		if (/^(\d*\.\d+|\d+)(%|rem|em|px)$/.test(size)) { return size; }
 		return '';
 	}
 	
@@ -42,10 +42,13 @@ export class AppComponent {
 	}
 	
 	getColumnStyle(col: Column) {
-		const basis = /^\d+(%|rem|em|px)?$/.test(col.basis) ? AppComponent.getSize(col.basis) : 'auto';
+		const basisSize = AppComponent.getSize(col.basis);
+		const basis = basisSize ? basisSize : 'auto';
 		const flex = `flex: ${col.grow || 0} ${col.shrink || 0} ${basis}`;
-		const minWidth = /^\d+(%|rem|em|px)?$/.test(col.minWidth) ? `; min-width: ${AppComponent.getSize(col.minWidth)}` : '';
-		const maxWidth = /^\d+(%|rem|em|px)?$/.test(col.minWidth) ? `; max-width: ${AppComponent.getSize(col.maxWidth)}` : '';
+		const minWidthSize = AppComponent.getSize(col.minWidth);
+		const maxWidthSize = AppComponent.getSize(col.maxWidth);
+		const minWidth = minWidthSize && !(minWidthSize === basisSize && !col.shrink) ? `; min-width: ${minWidthSize}` : '';
+		const maxWidth = maxWidthSize && !(maxWidthSize === basisSize && !col.grow) ? `; max-width: ${maxWidthSize}` : '';
 		return this.sanitizer.bypassSecurityTrustStyle(flex + minWidth + maxWidth);
 	}
 	
